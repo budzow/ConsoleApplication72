@@ -29,6 +29,33 @@ void a2() {
     }
 }
 
+void doSomething() {
+    std::cout << "Doing something" << std::endl;
+}
+
+void doSomethingElse() {
+    std::cout << "Doing something else" << std::endl;
+}
+
+void a3(){
+    bool a = false;
+    if (a) { // Noncompliant
+        doSomething(); // never executed
+    }
+
+    bool b = true; // Assuming b is defined somewhere
+    if (!a || b) { // Noncompliant; "!a" is always "true", "b" is never evaluated
+        doSomething();
+    }
+    else {
+        doSomethingElse(); // never executed
+    }
+}
+
+int main()
+{
+    a2();
+}
 int main()
 {
     a2();
