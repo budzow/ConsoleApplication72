@@ -55,9 +55,6 @@ void a3(){
 int main()
 {
     a2();
-}
-int main()
-{
-    a2();
+    a3();
 }
 
